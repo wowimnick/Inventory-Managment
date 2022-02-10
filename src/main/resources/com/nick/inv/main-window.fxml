@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="441.0" prefWidth="872.0" style="-fx-border-color: black; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nick.inv.MyController">
+   <effect>
+      <InnerShadow blurType="GAUSSIAN" choke="0.02" height="41.26" radius="16.3675" width="26.21">
+         <color>
+            <Color red="0.557894766330719" green="0.1281091570854187" blue="0.1281091570854187" />
+         </color></InnerShadow>
+   </effect>
+   <left>
+      <TableView fx:id="partTable" blendMode="EXCLUSION" prefHeight="429.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="75.0" text="Part ID" />
+          <TableColumn fx:id="name" prefWidth="100.0" text="Part Name" />
+          <TableColumn fx:id="stock" prefWidth="75.0" text="Stock" />
+          <TableColumn fx:id="price" prefWidth="75.0" text="Price" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </TableView>
+   </left>
+   <right>
+      <TableView fx:id="productTable" blendMode="EXCLUSION" prefHeight="200.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="productID" prefWidth="75.0" text="Product ID" />
+            <TableColumn fx:id="productName" prefWidth="100.0" text="Product Name" />
+            <TableColumn fx:id="productStock" prefWidth="75.0" text="Section" />
+            <TableColumn fx:id="productPrice" prefWidth="75.0" text="Price" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </right>
+   <opaqueInsets>
+      <Insets bottom="255.0" left="255.0" right="255.0" top="255.0" />
+   </opaqueInsets>
+   <center>
+       <GridPane hgap="20.0" prefHeight="441.0" prefWidth="170.0" style="-fx-background-color: gray;" vgap="5.0" BorderPane.alignment="CENTER">
+           <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="73.0" />
+               <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="75.4" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints maxHeight="292.8" minHeight="10.0" prefHeight="120.40" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="292.8" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="292.8" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="292.8" minHeight="10.0" prefHeight="49.00" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="157.40" minHeight="0.0" prefHeight="76.19" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="203.6" minHeight="10.0" prefHeight="86.19" vgrow="SOMETIMES" />
+           </rowConstraints>
+           <Button mnemonicParsing="false" onAction="#openAddPart" prefHeight="31.0" prefWidth="31.0" text="+" textFill="#09bc00" GridPane.rowIndex="1">
+              <font>
+                  <Font name="Bernard MT Condensed" size="16.0" />
+              </font>
+            <effect>
+               <InnerShadow height="30.53" radius="26.085" width="75.81">
+                  <color>
+                     <Color red="0.3686274588108063" green="0.3686274588108063" blue="0.3686274588108063" />
+                  </color>
+               </InnerShadow>
+            </effect>
+           </Button>
+           <Button mnemonicParsing="false" onAction="#openModifyPart" prefHeight="32.0" prefWidth="32.0" text="🔧" textFill="#b48400" GridPane.rowIndex="2">
+              <font>
+                  <Font name="Arial" size="13.0" />
+              </font>
+            <effect>
+               <InnerShadow height="25.77" radius="20.13" width="56.75">
+                  <color>
+                     <Color red="0.3686274588108063" green="0.3686274588108063" blue="0.3686274588108063" />
+                  </color>
+               </InnerShadow>
+            </effect>
+           </Button>
+           <Button mnemonicParsing="false" onAction="#onPartDelete" prefHeight="32.0" prefWidth="32.0" text="🗑" textFill="#ec0000" underline="true" GridPane.rowIndex="3">
+              <font>
+                  <Font size="16.0" />
+              </font>
+            <effect>
+               <InnerShadow height="44.83" radius="24.895" width="56.75">
+                  <color>
+                     <Color red="0.3686274588108063" green="0.3686274588108063" blue="0.3686274588108063" />
+                  </color>
+               </InnerShadow>
+            </effect>
+           </Button>
+
+
+           <!-- PRODUCTS ARE BELOW -->
+
+
+           <Button mnemonicParsing="false" onAction="#openAddProduct" prefHeight="31.0" prefWidth="31.0" text="+" textFill="#09bc00" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+               <font>
+                   <Font name="Bernard MT Condensed" size="16.0" />
+               </font>
+               <effect>
+                   <InnerShadow height="30.53" radius="26.085" width="75.81">
+                       <color>
+                           <Color red="0.3686274588108063" green="0.3686274588108063" blue="0.3686274588108063" />
+                       </color>
+                   </InnerShadow>
+               </effect>
+           </Button>
+
+           <Button mnemonicParsing="false" onAction="#openModifyProduct" prefHeight="32.0" prefWidth="32.0" text="🔧" textFill="#b48400" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+              <font>
+                  <Font name="Arial" size="13.0" />
+              </font>
+            <effect>
+               <InnerShadow height="25.77" radius="20.13" width="56.75">
+                  <color>
+                     <Color red="0.3686274588108063" green="0.3686274588108063" blue="0.3686274588108063" />
+                  </color>
+               </InnerShadow>
+            </effect>
+           </Button>
+
+           <Button mnemonicParsing="false" onAction="#onProductDelete" prefHeight="32.0" prefWidth="32.0" text="🗑" textFill="#ec0000" underline="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+              <font>
+                  <Font size="16.0" />
+              </font>
+            <effect>
+               <InnerShadow height="44.83" radius="24.895" width="56.75">
+                  <color>
+                     <Color red="0.3686274588108063" green="0.3686274588108063" blue="0.3686274588108063" />
+                  </color>
+               </InnerShadow>
+            </effect>
+           </Button>
+         <Label fx:id="associatedPartError" textFill="RED" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Label>
+
+       </GridPane>
+   </center>
+   <top>
+      <GridPane style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="384.4" minWidth="10.0" prefWidth="350.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="304.6" minWidth="10.0" prefWidth="170.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="10.0" prefWidth="349.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="searchedPart" alignment="CENTER" onAction="#onPartSearch" promptText="Search For Part..." />
+            <TextField fx:id="searchedProduct" alignment="CENTER" onAction="#onProductSearch" promptText="Search For Product..." GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+   </top>
+</BorderPane>
