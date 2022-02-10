@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.example.demo","l":"com.nick.inv"},{"m":"com.example.demo","l":"com.nick.inv.defs"}];updateSearchResults();
